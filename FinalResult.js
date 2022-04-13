@@ -1,7 +1,8 @@
 const fs = require("fs");
 
-let mobile = fs.readFileSync('./Mobiles.json')
 
+function finalresult(){
+let mobile = fs.readFileSync('./Mobiles.json')
 const mobileList=JSON.parse(mobile).filter(function(mobile){
     return mobile.mobileprice !== '';
 })
@@ -11,3 +12,7 @@ const sortedMobileList=mobileList.sort(function (a, b) {
   }
   );
 fs.writeFileSync("./sortedMobileList.json",JSON.stringify(sortedMobileList))
+}
+module.exports ={
+  finalresult
+}

@@ -6,10 +6,11 @@ const fs = require("fs");
 
 
 
-(async () => {
+async function scrapper2 (link2){
+    console.log("log 3");
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto('https://www.flipkart.com/search?q=i%20phone%2013&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off');
+    await page.goto(link2);
 
     const linksarray = await page.evaluate(() => {
 
@@ -42,7 +43,7 @@ const fs = require("fs");
 
 
         function extracthtm(html) {
-
+            console.log("log 4 ");
             let parsehtml = cheerio.load(html)
 
             let names = parsehtml(".B_NuCI")
@@ -85,4 +86,9 @@ fs.writeFileSync('./data2.json',JSON.stringify(arr))
 
 
     await browser.close();
-})();
+}
+
+
+module.exports = {
+    scrapper2
+}

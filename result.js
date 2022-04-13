@@ -2,6 +2,7 @@ const concat_map = require("concat-map");
 const fs = require("fs");
 
 // fs.readFileSync('./data.json')
+function result() {
 let data1=fs.promises.readFile('./data.json')
  let data2=fs.promises.readFile('./data2.json')
 
@@ -19,3 +20,9 @@ data2.then((data)=>{
     dataList = [...dataList, ...data];
     fs.writeFileSync('./Mobiles.json',JSON.stringify(dataList));
 })
+}
+
+
+module.exports ={
+    result
+}

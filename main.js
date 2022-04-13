@@ -70,16 +70,17 @@
 
 const request = require("request")
 const cheerio = require("cheerio")
+
 const puppeteer = require('puppeteer');
 const fs = require("fs");
 
 
 
- async () => {
-  const browser = await puppeteer.launch();
+  async function scrapper1 (link1){
+  console.log("console 1")
+    const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('https://www.amazon.in/s?k=iphone+13&sprefix=ip%2Caps%2C347&ref=nb_sb_ss_ts-doa-p_1_2');
-
+  await page.goto(link1)
   const linksarray = await page.evaluate(() => {
 
     let mobile = document.querySelectorAll(".a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal")
@@ -96,7 +97,7 @@ const fs = require("fs");
 
   })
 let arr=[]
-
+  console.log("console 2");
   for (let i = 0; i < linksarray.length; i++) {
 
     let newlink = linksarray[i]
@@ -154,4 +155,8 @@ fs.writeFileSync('./data.json',JSON.stringify(arr))
 
 
   await browser.close();
+}
+
+module.exports = {
+  scrapper1
 }
