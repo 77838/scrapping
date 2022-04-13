@@ -1,0 +1,50 @@
+@import url(//db.onlinewebfonts.com/c/6c40f158a670ee286eeb3e0859db3aec?family=Konexy+Personal+Use);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'konexy personal use';
+    background-color: rgb(31, 31, 31);
+    color: greenyellow;
+    letter-spacing: 2px;
+}
+h1{
+    margin: 5%;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+.form{
+
+    margin: 5%;
+    margin-left: 25%;
+}
+.form input{
+    width: 50%;
+    height: 40px;
+}
+.form button{
+    width: 25%;
+    height: 40px;
+    border-radius: 20%;
+    box-shadow: 10px 3px 10px white;
+}
+.form button:hover{
+    width: 20%;
+    height: 30px;
+    color: yellow;
+    border-color: yellowgreen;
+    box-shadow: 10px 3px 10px rgb(0, 255, 34);
+}
+.btns{
+    margin-left: 24%;
+    margin-top: -4%;
+    color: yellow;
+}
+table{
+    border-collapse:separate;
+    border-spacing:60px ;
+    margin-left: 10%;
+}
+table thead th{
+    color: white;
+}
